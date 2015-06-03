@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cities>
+  <province name="北京" No="BJ">
+    <item No="QB">全部</item>
+    <item No="DCQ">东城区</item>
+    <item No="XCQ">西城区</item>
+    <item No="CWQ">崇文区</item>
+    <item No="XWQ">宣武区</item>
+    <item No="CYQ">朝阳区</item>
+    <item No="FTQ">丰台区</item>
+    <item No="SJSQ">石景山区</item>
+    <item No="HDQ">海淀区</item>
+    <item No="MTGQ">门头沟区</item>
+    <item No="FSQ">房山区</item>
+    <item No="TZQ">通州区</item>
+    <item No="SYQ">顺义区</item>
+    <item No="CPQ">昌平区</item>
+    <item No="DXQ">大兴区</item>
+    <item No="HRQ">怀柔区</item>
+    <item No="PGQ">平谷区</item>
+    <item No="MYX">密云县</item>
+    <item No="YQX">延庆县</item>
+  </province>
+  <province name="天津" No="TJ">
+    <item No="QB">全部</item>
+    <item No="HPQ">和平区</item>
+    <item No="HDQ">河东区</item>
+    <item No="HXQ">河西区</item>
+    <item No="NKQ">南开区</item>
+    <item No="HBQ">河北区</item>
+    <item No="HQQ">红桥区</item>
+    <item No="TGQ">塘沽区</item>
+    <item No="HGQ">汉沽区</item>
+    <item No="DGQ">大港区</item>
+    <item No="DLQ">东丽区</item>
+    <item No="XQQ">西青区</item>
+    <item No="JNQ">津南区</item>
+    <item No="BCQ">北辰区</item>
+    <item No="WQQ">武清区</item>
+    <item No="BDQ">宝坻区</item>
+    <item No="NHX">宁河县</item>
+    <item No="JHX">静海县</item>
+    <item No="JX">蓟县</item>
+  </province>
+  <province name="河北" No="HB">
+    <item No="SJZ">石家庄</item>
+    <item No="TS">唐山</item>
+    <item No="QHD">秦皇岛</item>
+    <item No="HD">邯郸</item>
+    <item No="XT">邢台</item>
+    <item No="BD">保定</item>
+    <item No="ZJK">张家口</item>
+    <item No="CD">承德</item>
+    <item No="CZ">沧州</item>
+    <item No="LF">廊坊</item>
+    <item No="HS">衡水</item>
+  </province>
+  <province name="山西" No="SX">
+    <item No="TY">太原</item>
+    <item No="DT">大同</item>
+    <item No="YQ">阳泉</item>
+    <item No="CZ">长治</item>
+    <item No="JC">晋城</item>
+    <item No="SZ">朔州</item>
+    <item No="JZ">晋中</item>
+    <item No="YC">运城</item>
+    <item No="XZ">忻州</item>
+    <item No="LF">临汾</item>
+    <item No="LL">吕梁</item>
+  </province>
+  <province name="内蒙古" No="NMG">
+    <item No="HHHT">呼和浩特</item>
+    <item No="BT">包头</item>
+    <item No="WH">乌海</item>
+    <item No="CF">赤峰</item>
+    <item No="TL">通辽</item>
+    <item No="EEDS">鄂尔多斯</item>
+    <item No="HLBE">呼伦贝尔</item>
+    <item No="BYNE">巴彦淖尔</item>
+    <item No="WLCB">乌兰察布</item>
+    <item No="XAM">兴安盟</item>
+    <item No="XLGLM">锡林郭勒盟</item>
+    <item No="ALSM">阿拉善盟</item>
+  </province>
+  <province name="辽宁" No="LN">
+    <item No="SY">沈阳</item>
+    <item No="DL">大连</item>
+    <item No="AS">鞍山</item>
+    <item No="FS">抚顺</item>
+    <item No="BX">本溪</item>
+    <item No="DD">丹东</item>
+    <item No="JZ">锦州</item>
+    <item No="YK">营口</item>
+    <item No="FX">阜新</item>
+    <item No="LY">辽阳</item>
+    <item No="PJ">盘锦</item>
+    <item No="TL">铁岭</item>
+    <item No="CY">朝阳</item>
+    <item No="HLD">葫芦岛</item>
+  </province>
+  <province name="吉林" No="JL">
+    <item No="CC">长春</item>
+    <item No="JL">吉林</item>
+    <item No="SP">四平</item>
+    <item No="LY">辽源</item>
+    <item No="TH">通化</item>
+    <item No="BS">白山</item>
+    <item No="SY">松原</item>
+    <item No="BC">白城</item>
+    <item No="YB">延边</item>
+  </province>
+  <province name="黑龙江" No="HLJ">
+    <item No="HEB">哈尔滨</item>
+    <item No="QQHE">齐齐哈尔</item>
+    <item No="JX">鸡西</item>
+    <item No="HG">鹤岗</item>
+    <item No="SYS">双鸭山</item>
+    <item No="DQ">大庆</item>
+    <item No="YC">伊春</item>
+    <item No="JMS">佳木斯</item>
+    <item No="QTH">七台河</item>
+    <item No="MDJ">牡丹江</item>
+    <item No="HH">黑河</item>
+    <item No="SH">绥化</item>
+    <item No="DXAL">大兴安岭</item>
+  </province>
+  <province name="上海" No="SH">
+    <item No="QB">全部</item>
+    <item No="HPQ">黄浦区</item>
+    <item No="LWQ">卢湾区</item>
+    <item No="XHQ">徐汇区</item>
+    <item No="CNQ">长宁区</item>
+    <item No="JAQ">静安区</item>
+    <item No="PTQ">普陀区</item>
+    <item No="ZBQ">闸北区</item>
+    <item No="HKQ">虹口区</item>
+    <item No="YPQ">杨浦区</item>
+    <item No="MXQ">闵行区</item>
+    <item No="BSQ">宝山区</item>
+    <item No="JDQ">嘉定区</item>
+    <item No="PDXQ">浦东新区</item>
+    <item No="JSQ">金山区</item>
+    <item No="SJQ">松江区</item>
+    <item No="QPQ">青浦区</item>
+    <item No="NHQ">南汇区</item>
+    <item No="FXQ">奉贤区</item>
+    <item No="CMX">崇明县</item>
+  </province>
+  <province name="江苏" No="JS">
+    <item No="NJ">南京</item>
+    <item No="WX">无锡</item>
+    <item No="XZ">徐州</item>
+    <item No="CZ">常州</item>
+    <item No="SZ">苏州</item>
+    <item No="NT">南通</item>
+    <item No="LYG">连云港</item>
+    <item No="HA">淮安</item>
+    <item No="YC">盐城</item>
+    <item No="YZ">扬州</item>
+    <item No="ZJ">镇江</item>
+    <item No="TZ">泰州</item>
+    <item No="SQ">宿迁</item>
+  </province>
+  <province name="浙江" No="ZJ">
+    <item No="HZ">杭州</item>
+    <item No="NB">宁波</item>
+    <item No="WZ">温州</item>
+    <item No="JX">嘉兴</item>
+    <item No="HZ">湖州</item>
+    <item No="SX">绍兴</item>
+    <item No="JH">金华</item>
+    <item No="QZ">衢州</item>
+    <item No="ZS">舟山</item>
+    <item No="TZ">台州</item>
+    <item No="LS">丽水</item>
+  </province>
+  <province name="安徽" No="AH">
+    <item No="HF">合肥</item>
+    <item No="WH">芜湖</item>
+    <item No="BB">蚌埠</item>
+    <item No="HN">淮南</item>
+    <item No="MAS">马鞍山</item>
+    <item No="HB">淮北</item>
+    <item No="TL">铜陵</item>
+    <item No="AQ">安庆</item>
+    <item No="HS">黄山</item>
+    <item No="CZ">滁州</item>
+    <item No="FY">阜阳</item>
+    <item No="SZ">宿州</item>
+    <item No="CH">巢湖</item>
+    <item No="LA">六安</item>
+    <item No="HZ">亳州</item>
+    <item No="CZ">池州</item>
+    <item No="XC">宣城</item>
+  </province>
+  <province name="福建" No="FJ">
+    <item No="FZ">福州</item>
+    <item No="XM">厦门</item>
+    <item No="PT">莆田</item>
+    <item No="SM">三明</item>
+    <item No="QZ">泉州</item>
+    <item No="ZZ">漳州</item>
+    <item No="NP">南平</item>
+    <item No="LY">龙岩</item>
+    <item No="ND">宁德</item>
+  </province>
+  <province name="江西" No="JX">
+    <item No="NC">南昌</item>
+    <item No="JDZ">景德镇</item>
+    <item No="PX">萍乡</item>
+    <item No="JJ">九江</item>
+    <item No="XY">新余</item>
+    <item No="YT">鹰潭</item>
+    <item No="GZ">赣州</item>
+    <item No="JA">吉安</item>
+    <item No="YC">宜春</item>
+    <item No="FZ">抚州</item>
+    <item No="SR">上饶</item>
+  </province>
+  <province name="山东" No="SD">
+    <item No="JN">济南</item>
+    <item No="QD">青岛</item>
+    <item No="ZB">淄博</item>
+    <item No="ZZ">枣庄</item>
+    <item No="DY">东营</item>
+    <item No="YT">烟台</item>
+    <item No="WF">潍坊</item>
+    <item No="JN">济宁</item>
+    <item No="TA">泰安</item>
+    <item No="WH">威海</item>
+    <item No="RZ">日照</item>
+    <item No="LW">莱芜</item>
+    <item No="LY">临沂</item>
+    <item No="DZ">德州</item>
+    <item No="LC">聊城</item>
+    <item No="BZ">滨州</item>
+    <item No="HZ">荷泽</item>
+  </province>
+  <province name="河南" No="HN">
+    <item No="ZZ">郑州</item>
+    <item No="KF">开封</item>
+    <item No="LY">洛阳</item>
+    <item No="PDS">平顶山</item>
+    <item No="AY">安阳</item>
+    <item No="HB">鹤壁</item>
+    <item No="XX">新乡</item>
+    <item No="JZ">焦作</item>
+    <item No="PY">濮阳</item>
+    <item No="XC">许昌</item>
+    <item No="LH">漯河</item>
+    <item No="SMX">三门峡</item>
+    <item No="NY">南阳</item>
+    <item No="SQ">商丘</item>
+    <item No="XY">信阳</item>
+    <item No="ZK">周口</item>
+    <item No="ZMD">驻马店</item>
+  </province>
+  <province name="湖北" No="HB">
+    <item No="WH">武汉</item>
+    <item No="HS">黄石</item>
+    <item No="SY">十堰</item>
+    <item No="YC">宜昌</item>
+    <item No="XY">襄阳</item>
+    <item No="EZ">鄂州</item>
+    <item No="JM">荆门</item>
+    <item No="XG">孝感</item>
+    <item No="JZ">荆州</item>
+    <item No="HG">黄冈</item>
+    <item No="XN">咸宁</item>
+    <item No="SZ">随州</item>
+    <item No="ES">恩施</item>
+    <item No="SNJ">神农架</item>
+  </province>
+  <province name="湖南" No="HN">
+    <item No="CS">长沙</item>
+    <item No="ZZ">株洲</item>
+    <item No="XT">湘潭</item>
+    <item No="HY">衡阳</item>
+    <item No="SY">邵阳</item>
+    <item No="YY">岳阳</item>
+    <item No="CD">常德</item>
+    <item No="ZJJ">张家界</item>
+    <item No="YY">益阳</item>
+    <item No="CZ">郴州</item>
+    <item No="YZ">永州</item>
+    <item No="HH">怀化</item>
+    <item No="LD">娄底</item>
+    <item No="XX">湘西</item>
+  </province>
+  <province name="广东" No="GD">
+    <item No="GZ">广州</item>
+    <item No="SG">韶关</item>
+    <item No="SZ">深圳</item>
+    <item No="ZH">珠海</item>
+    <item No="ST">汕头</item>
+    <item No="FS">佛山</item>
+    <item No="JM">江门</item>
+    <item No="ZJ">湛江</item>
+    <item No="MM">茂名</item>
+    <item No="ZQ">肇庆</item>
+    <item No="HZ">惠州</item>
+    <item No="MZ">梅州</item>
+    <item No="SW">汕尾</item>
+    <item No="HY">河源</item>
+    <item No="YJ">阳江</item>
+    <item No="QY">清远</item>
+    <item No="DG">东莞</item>
+    <item No="ZS">中山</item>
+    <item No="CZ">潮州</item>
+    <item No="JY">揭阳</item>
+    <item No="YF">云浮</item>
+  </province>
+  <province name="广西" No="GX">
+    <item No="NN">南宁</item>
+    <item No="LZ">柳州</item>
+    <item No="GL">桂林</item>
+    <item No="WZ">梧州</item>
+    <item No="BH">北海</item>
+    <item No="FCG">防城港</item>
+    <item No="QZ">钦州</item>
+    <item No="GG">贵港</item>
+    <item No="YL">玉林</item>
+    <item No="BS">百色</item>
+    <item No="HZ">贺州</item>
+    <item No="HC">河池</item>
+    <item No="LB">来宾</item>
+    <item No="CZ">崇左</item>
+  </province>
+  <province name="海南" No="HN">
+    <item No="HK">海口</item>
+    <item No="SY">三亚</item>
+  </province>
+  <province name="重庆" No="ZQ">
+    <item No="QB">全部</item>
+    <item No="ZQ">重庆</item>
+    <item No="WZQ">万州区</item>
+    <item No="FLQ">涪陵区</item>
+    <item No="YZQ">渝中区</item>
+    <item No="DDKQ">大渡口区</item>
+    <item No="JBQ">江北区</item>
+    <item No="SPBQ">沙坪坝区</item>
+    <item No="JLPQ">九龙坡区</item>
+    <item No="NAQ">南岸区</item>
+    <item No="BBQ">北碚区</item>
+    <item No="WSQ">万盛区</item>
+    <item No="SQQ">双桥区</item>
+    <item No="YBQ">渝北区</item>
+    <item No="BNQ">巴南区</item>
+    <item No="QJQ">黔江区</item>
+    <item No="CSQ">长寿区</item>
+    <item No="QJX">綦江县</item>
+    <item No="TNX">潼南县</item>
+    <item No="TLX">铜梁县</item>
+    <item No="DZX">大足县</item>
+    <item No="RCX">荣昌县</item>
+    <item No="BSX">璧山县</item>
+    <item No="LPX">梁平县</item>
+    <item No="CKX">城口县</item>
+    <item No="FDX">丰都县</item>
+    <item No="DJX">垫江县</item>
+    <item No="WLX">武隆县</item>
+    <item No="ZX">忠县</item>
+    <item No="KX">开县</item>
+    <item No="YYX">云阳县</item>
+    <item No="FJX">奉节县</item>
+    <item No="WSX">巫山县</item>
+    <item No="WXX">巫溪县</item>
+    <item No="SZX">石柱县</item>
+    <item No="XSX">秀山县</item>
+    <item No="YYX">酉阳县</item>
+    <item No="PSX">彭水县</item>
+    <item No="JJ">江津</item>
+    <item No="HC">合川</item>
+    <item No="YC">永川</item>
+    <item No="NC">南川</item>
+  </province>
+  <province name="四川" No="SC">
+    <item No="CD">成都</item>
+    <item No="ZG">自贡</item>
+    <item No="PZH">攀枝花</item>
+    <item No="LZ">泸州</item>
+    <item No="DY">德阳</item>
+    <item No="MY">绵阳</item>
+    <item No="GY">广元</item>
+    <item No="SN">遂宁</item>
+    <item No="NJ">内江</item>
+    <item No="LS">乐山</item>
+    <item No="NC">南充</item>
+    <item No="MS">眉山</item>
+    <item No="YB">宜宾</item>
+    <item No="GA">广安</item>
+    <item No="DZ">达州</item>
+    <item No="YA">雅安</item>
+    <item No="BZ">巴中</item>
+    <item No="ZY">资阳</item>
+    <item No="AB">阿坝</item>
+    <item No="GZ">甘孜</item>
+    <item No="LS">凉山</item>
+  </province>
+  <province name="贵州" No="GZ">
+    <item No="GY">贵阳</item>
+    <item No="LPS">六盘水</item>
+    <item No="ZY">遵义</item>
+    <item No="AS">安顺</item>
+    <item No="TR">铜仁</item>
+    <item No="QXN">黔西南</item>
+    <item No="BJ">毕节</item>
+    <item No="QDN">黔东南</item>
+    <item No="QN">黔南</item>
+  </province>
+  <province name="云南" No="YN">
+    <item No="KM">昆明</item>
+    <item No="QJ">曲靖</item>
+    <item No="YX">玉溪</item>
+    <item No="BS">保山</item>
+    <item No="ZT">昭通</item>
+    <item No="LJ">丽江</item>
+    <item No="SM">思茅</item>
+    <item No="LC">临沧</item>
+    <item No="CX">楚雄</item>
+    <item No="HH">红河</item>
+    <item No="WS">文山</item>
+    <item No="XSBN">西双版纳</item>
+    <item No="DL">大理</item>
+    <item No="DH">德宏</item>
+    <item No="NJ">怒江</item>
+    <item No="DQ">迪庆</item>
+  </province>
+  <province name="西藏" No="XC">
+    <item No="LS">拉萨</item>
+    <item No="CD">昌都</item>
+    <item No="SN">山南</item>
+    <item No="RKZ">日喀则</item>
+    <item No="NQ">那曲</item>
+    <item No="AL">阿里</item>
+    <item No="LZ">林芝</item>
+  </province>
+  <province name="陕西" No="SX">
+    <item No="XA">西安</item>
+    <item No="TC">铜川</item>
+    <item No="BJ">宝鸡</item>
+    <item No="XY">咸阳</item>
+    <item No="WN">渭南</item>
+    <item No="YA">延安</item>
+    <item No="HZ">汉中</item>
+    <item No="YL">榆林</item>
+    <item No="AK">安康</item>
+    <item No="SL">商洛</item>
+  </province>
+  <province name="甘肃" No="GS">
+    <item No="LZ">兰州</item>
+    <item No="JYG">嘉峪关</item>
+    <item No="JC">金昌</item>
+    <item No="BY">白银</item>
+    <item No="TS">天水</item>
+    <item No="WW">武威</item>
+    <item No="ZY">张掖</item>
+    <item No="PL">平凉</item>
+    <item No="JQ">酒泉</item>
+    <item No="QY">庆阳</item>
+    <item No="DX">定西</item>
+    <item No="LN">陇南</item>
+    <item No="LX">临夏</item>
+    <item No="GN">甘南</item>
+  </province>
+  <province name="青海" No="QH">
+    <item No="XN">西宁</item>
+    <item No="HD">海东</item>
+    <item No="HB">海北</item>
+    <item No="HN">黄南</item>
+    <item No="HN">海南</item>
+    <item No="GL">果洛</item>
+    <item No="YS">玉树</item>
+    <item No="HX">海西</item>
+  </province>
+  <province name="宁夏" No="NX">
+    <item No="YC">银川</item>
+    <item No="SZS">石嘴山</item>
+    <item No="WZ">吴忠</item>
+    <item No="GY">固原</item>
+    <item No="ZW">中卫</item>
+  </province>
+  <province name="新疆" No="XJ">
+    <item No="WLMQ">乌鲁木齐</item>
+    <item No="KLMY">克拉玛依</item>
+    <item No="TLF">吐鲁番</item>
+    <item No="HM">哈密</item>
+    <item No="CJ">昌吉</item>
+    <item No="BETL">博尔塔拉</item>
+    <item No="BYGL">巴音郭楞</item>
+    <item No="AKS">阿克苏</item>
+    <item No="KZLS">克孜勒苏</item>
+    <item No="KS">喀什</item>
+    <item No="HT">和田</item>
+    <item No="YL">伊犁</item>
+    <item No="TC">塔城</item>
+    <item No="ALT">阿勒泰</item>
+    <item No="SHZ">石河子</item>
+    <item No="ALE">阿拉尔</item>
+    <item No="TMSK">图木舒克</item>
+    <item No="WJQ">五家渠</item>
+  </province>
+  <province name="香港" No="XG">
+    <item No="XG">香港</item>
+  </province>
+  <province name="澳门" No="AM">
+    <item No="AM">澳门</item>
+  </province>
+  <province name="台湾" No="TW">
+    <item No="TW">台湾</item>
+  </province>
+  <province name="缅甸" No="MD">
+    <item No="NBD">内比都</item>
+    <item No="YG">仰光</item>
+    <item No="BS">勃生</item>
+    <item No="MDL">曼德勒</item>
+    <item No="MZN">密支那</item>
+    <item No="LM">腊戍</item>
+  </province>
+</cities>
