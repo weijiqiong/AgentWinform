@@ -61,6 +61,19 @@ namespace AgentWinform
                            select new ValueAndValue() { Name = item.Attribute("name").Value.ToString(), No = item.Attribute("No").Value.ToString() };
 
 
+            //省市数据Excel生成，粘贴用，正常系统请勿开启；
+            //var areaDataTest =( from item in xDoc.Descendants("province")
+            //               select  item.Attribute("name").Value.ToString()).ToList();
+
+
+            //var CityDataTest = ( from item in xDoc.Descendants("province").Elements()
+
+            //                     select item.Attribute("No").Value.ToString()).ToList();
+            //var ttt = string.Empty;
+            //foreach (var item in CityDataTest)
+            //{
+            //    ttt += item + "\r";
+            //}
 
 
             cbArea.DataSource = areaData.ToList();
