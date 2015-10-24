@@ -117,16 +117,35 @@ namespace AgentWinform
         private void btnSave_Click(object sender, EventArgs e)
         {
             isSave = true;
-            SaveData();
+            if (SaveData())
+            {
+
+                DialogResult = DialogResult.OK;
+            }
 
         }
 
-        private void SaveData()
+        private bool SaveData()
         {
+            if (txtNameSX.Text.Length<1)
+            {
+                MessageBox.Show("请填写姓名缩写");
+                return false;
+            }
+
+            if (txtNameNo.Text.Length < 15)
+            {
+                MessageBox.Show("请填写身份证号");
+                return false;
+            }
             UserInfo.Name = txtName.Text;
             UserInfo.NameNo = txtNameNo.Text;
             UserInfo.TaobaoName = txtTaobaoName.Text;
             UserInfo.WeixinNo = txtWeixinNo.Text;
+            txtNameSX.Text = txtNameSX.Text.Trim();
+            UserInfo.NameSX = txtNameSX.Text.Substring(0, 1).ToUpper() + txtNameSX.Text.Substring(1, txtNameSX.Text.Length - 1);
+           
+           
            
             UserInfo.LevelName = cbLevel.SelectedItem.ToString();
             UserInfo.AuthNow = dtAuthNow.Value;
@@ -160,6 +179,7 @@ namespace AgentWinform
                 UserInfo.City = tagCity.No;
                 UserInfo.CityName = tagCity.Name;
             }
+            return true;
         }
 
         private void pbPhoto_Click(object sender, EventArgs e)
@@ -194,12 +214,14 @@ namespace AgentWinform
             string strCity = ((ValueAndValue)cbCity.SelectedItem).Name;
             string strLevel = ((ValueAndValue)cbLevel.SelectedItem).Name;
             string strLevelNo = ((ValueAndValue)cbLevel.SelectedItem).No;
-
-            //水印图片
-            System.Drawing.Image wrImage = pbPhoto.Image;
-            Image ims = ImgEdit.ZommImg(wrImage, 303, 423);
-            var imgWater = new ImgAddModel() { Point = new Point(125, 1141), Image = ims };
-
+            ImgAddModel imgWater = null; 
+            if (pbPhoto.Image == null)
+            {
+                //水印图片
+                System.Drawing.Image wrImage = pbPhoto.Image;
+                Image ims = ImgEdit.ZommImg(wrImage, 303, 423);
+                imgWater = new ImgAddModel() { Point = new Point(125, 1141), Image = ims };
+            }
 
             var textWater = new List<TextAddModel>();
             Color TarColor = new Color();
@@ -318,12 +340,10 @@ namespace AgentWinform
         private void btnMakePic_Click(object sender, EventArgs e)
         {
             isSave = false;
-            if (pbPhoto.Image == null)
+            if (!SaveData())
             {
-                MessageBox.Show("请上传照片，点击左侧方框！");
                 return;
             }
-            SaveData();
             if (IsEdit)
             {
                 MakPic();
@@ -374,14 +394,16 @@ namespace AgentWinform
             if (LsUser != null)
             {
                 var reusultData = from item in LsUser
-                                  where item.NameNo!=null && item.NameNo.IndexOf(txtNameNo.Text) > -1
+                                  where item.NameNo != null && item.NameNo.IndexOf(txtNameNo.Text) > -1
                                   select item;
-                UserInfo = reusultData.FirstOrDefault();
-                if (UserInfo != null)
+                var resultUserInfo = reusultData.FirstOrDefault();
+                if (resultUserInfo == null)
                 {
-                    Init();
-
+                    MessageBox.Show("没有查到该身份证号");
+                    return;
                 }
+                UserInfo = resultUserInfo;
+                Init();
             }
         }
 

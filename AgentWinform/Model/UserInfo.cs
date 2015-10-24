@@ -12,6 +12,9 @@ namespace AgentWinform.Model
         /// 编号ID（非主键）
         /// </summary>
         public string Name { set; get; }
+
+        public string NameSX { set; get; }
+
         public string WeixinNo { set; get; }
 
         public string Area{ set; get; }

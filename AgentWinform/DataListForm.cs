@@ -59,12 +59,9 @@ namespace AgentWinform
 
                 try
                 {
-                    if (userInfo.Area != "5")//省不需要自动编号
-                    {
                         //自动生成编码
-                        userInfo.AuthNo = GetNo(userInfo);
+                    userInfo.AuthNo = "BW" + userInfo.NameSX+userInfo.NameNo.Substring(userInfo.NameNo.Length -5,5);
 
-                    }
                 }
                 catch (Exception ex)
                 {
@@ -206,8 +203,12 @@ namespace AgentWinform
             }
             if (dataGridViewList.Columns[e.ColumnIndex].Name == "colAuthPhotoPath")
             {
-                string path = dataGridViewList.Rows[e.RowIndex].Cells["colAuthPhotoPath"].Value.ToString();
-                System.Diagnostics.Process.Start("explorer.exe", path);
+                var photoPath = dataGridViewList.Rows[e.RowIndex].Cells["colAuthPhotoPath"].Value;
+                if (photoPath != null)
+                {    string path =photoPath.ToString();
+                    System.Diagnostics.Process.Start("explorer.exe", path);
+                }
+               
             }
         }
 
