@@ -44,27 +44,27 @@
             this.dtDateEnd = new System.Windows.Forms.DateTimePicker();
             this.cbLevel = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtNameSX = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtTaobaoName = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cbCity = new System.Windows.Forms.ComboBox();
             this.btnQuery = new System.Windows.Forms.Button();
             this.cbIsNoEdit = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtAuthNo = new System.Windows.Forms.TextBox();
-            this.cbCity = new System.Windows.Forms.ComboBox();
             this.dtAuthNow = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtTaobaoName = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnMakePic = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.ofPhotoFile = new System.Windows.Forms.OpenFileDialog();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtNameSX = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -82,6 +82,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(127, 21);
             this.txtName.TabIndex = 1;
+            this.txtName.Leave += new System.EventHandler(this.txtName_Leave);
             // 
             // txtWeixinNo
             // 
@@ -227,6 +228,61 @@
             this.panel1.Size = new System.Drawing.Size(451, 401);
             this.panel1.TabIndex = 20;
             // 
+            // txtNameSX
+            // 
+            this.txtNameSX.Location = new System.Drawing.Point(234, 91);
+            this.txtNameSX.Name = "txtNameSX";
+            this.txtNameSX.Size = new System.Drawing.Size(127, 21);
+            this.txtNameSX.TabIndex = 31;
+            // 
+            // label11
+            // 
+            this.label11.Location = new System.Drawing.Point(232, 65);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(129, 23);
+            this.label11.TabIndex = 32;
+            this.label11.Text = "姓名缩写";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.pbPhoto);
+            this.panel3.Controls.Add(this.txtTaobaoName);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.cbArea);
+            this.panel3.Controls.Add(this.cbCity);
+            this.panel3.Location = new System.Drawing.Point(73, 298);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(196, 24);
+            this.panel3.TabIndex = 30;
+            this.panel3.Visible = false;
+            // 
+            // txtTaobaoName
+            // 
+            this.txtTaobaoName.Location = new System.Drawing.Point(16, 216);
+            this.txtTaobaoName.Name = "txtTaobaoName";
+            this.txtTaobaoName.Size = new System.Drawing.Size(127, 21);
+            this.txtTaobaoName.TabIndex = 22;
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(14, 190);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 23);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "淘宝店名";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cbCity
+            // 
+            this.cbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCity.FormattingEnabled = true;
+            this.cbCity.Location = new System.Drawing.Point(177, 270);
+            this.cbCity.Name = "cbCity";
+            this.cbCity.Size = new System.Drawing.Size(127, 20);
+            this.cbCity.TabIndex = 25;
+            // 
             // btnQuery
             // 
             this.btnQuery.Location = new System.Drawing.Point(327, 141);
@@ -266,15 +322,6 @@
             this.txtAuthNo.TabIndex = 26;
             this.txtAuthNo.Text = "自动生成";
             // 
-            // cbCity
-            // 
-            this.cbCity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCity.FormattingEnabled = true;
-            this.cbCity.Location = new System.Drawing.Point(177, 270);
-            this.cbCity.Name = "cbCity";
-            this.cbCity.Size = new System.Drawing.Size(127, 20);
-            this.cbCity.TabIndex = 25;
-            // 
             // dtAuthNow
             // 
             this.dtAuthNow.Location = new System.Drawing.Point(234, 206);
@@ -290,22 +337,6 @@
             this.label9.TabIndex = 23;
             this.label9.Text = "授权日期";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(14, 190);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(100, 23);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "淘宝店名";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtTaobaoName
-            // 
-            this.txtTaobaoName.Location = new System.Drawing.Point(16, 216);
-            this.txtTaobaoName.Name = "txtTaobaoName";
-            this.txtTaobaoName.Size = new System.Drawing.Size(127, 21);
-            this.txtTaobaoName.TabIndex = 22;
             // 
             // panel2
             // 
@@ -348,36 +379,6 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.pbPhoto);
-            this.panel3.Controls.Add(this.txtTaobaoName);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.cbArea);
-            this.panel3.Controls.Add(this.cbCity);
-            this.panel3.Location = new System.Drawing.Point(73, 298);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(196, 24);
-            this.panel3.TabIndex = 30;
-            this.panel3.Visible = false;
-            // 
-            // txtNameSX
-            // 
-            this.txtNameSX.Location = new System.Drawing.Point(234, 91);
-            this.txtNameSX.Name = "txtNameSX";
-            this.txtNameSX.Size = new System.Drawing.Size(127, 21);
-            this.txtNameSX.TabIndex = 31;
-            // 
-            // label11
-            // 
-            this.label11.Location = new System.Drawing.Point(232, 65);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(129, 23);
-            this.label11.TabIndex = 32;
-            this.label11.Text = "姓名缩写(首字母大写)";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // AddUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -390,9 +391,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbPhoto)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

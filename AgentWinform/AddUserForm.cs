@@ -108,6 +108,7 @@ namespace AgentWinform
             dtDateEnd.Value =  UserInfo.AuthEnd;
             pbPhoto.ImageLocation = UserInfo.photoPath == null ? string.Empty : UserInfo.photoPath;
             txtAuthNo.Text = UserInfo.AuthNo == null ? string.Empty : UserInfo.AuthNo;
+            txtNameSX.Text = UserInfo.NameSX == null ? string.Empty : UserInfo.NameSX;
 
             cbArea.SelectedItem = ValueAndValue.FindByText(cbArea, UserInfo.AreaName);
             cbLevel.SelectedItem = ValueAndValue.FindByValue(cbLevel, UserInfo.Level);
@@ -133,9 +134,9 @@ namespace AgentWinform
                 return false;
             }
 
-            if (txtNameNo.Text.Length < 15)
+            if (txtNameNo.Text.Length < 18)
             {
-                MessageBox.Show("请填写身份证号");
+                MessageBox.Show("请填写18位身份证号");
                 return false;
             }
             UserInfo.Name = txtName.Text;
@@ -179,6 +180,9 @@ namespace AgentWinform
                 UserInfo.City = tagCity.No;
                 UserInfo.CityName = tagCity.Name;
             }
+
+           
+
             return true;
         }
 
@@ -215,7 +219,7 @@ namespace AgentWinform
             string strLevel = ((ValueAndValue)cbLevel.SelectedItem).Name;
             string strLevelNo = ((ValueAndValue)cbLevel.SelectedItem).No;
             ImgAddModel imgWater = null; 
-            if (pbPhoto.Image == null)
+            if (pbPhoto.Image != null)
             {
                 //水印图片
                 System.Drawing.Image wrImage = pbPhoto.Image;
@@ -225,11 +229,10 @@ namespace AgentWinform
 
             var textWater = new List<TextAddModel>();
             Color TarColor = new Color();
+            TarColor = Color.White;
             //正文
             string contentText = string.Empty;
-            //编号
-            string strAuthNo = UserInfo.AuthNo;
-
+          
             string strAreaAndeCity = string.Empty;
             string strTitleArea = string.Empty;
             //直辖市问题
@@ -252,75 +255,52 @@ namespace AgentWinform
                 strTitleArea = strArea + strCity + "市代理授权";
             }
 
-            switch (strLevelNo)
-            {
-                case "0": TarColor = Color.White;
-                    contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}总代理。负责BOBIWATER美颜系列产品在{3}招商、销售及业务推广事宜。 ";
-                    break;
-                case "1": TarColor = Color.White;
-                    contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域代理商。负责BOBIWATER美颜系列产品在{3}指定区域内招商、销售及业务推广事宜。 ";
-                    break;
-                case "2": TarColor = Color.FromArgb(110, 99, 95);
-                    contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域批发商。负责BOBIWATER美颜系列产品在{3}指定区域内批发、零售业务 ";
-                    break;
-                case "3": TarColor = Color.FromArgb(110, 99, 95);
-                    contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域零售商。负责BOBIWATER美颜系列产品在{3}指定区域内进行零售业务 ";
-                    break;
-                case "4": TarColor = Color.FromArgb(110, 99, 95);
-                    contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域分销商。负责BOBIWATER美颜系列产品在{3}指定区域内招商、批发、零售业务 ";
-                    break;
-                case "5": TarColor = Color.White;
-                    contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}省独家代理商。负责BOBI WATER美颜系列产品在{3}省区域内经营、销售及业务推广事宜。 ";
-                    strAreaAndeCity = strArea;
-                    strTitleArea = strArea + "省代理授权";
-                    break;
-                default: TarColor = Color.FromArgb(110, 99, 95);
-                    contentText = "    兹授权{0}({1}  {2})为BOBI WATER{3}代理商。负责BOBI WATER美颜系列产品在{3}区域内经营、销售及业务推广事宜。 ";
-                    break;
-            }
 
-            contentText = string.Format(contentText
-            , txtName.Text
-            ,txtWeixinNo.Text==string.Empty?string.Empty: "微信："+txtWeixinNo.Text
-             , txtTaobaoName.Text == string.Empty ? string.Empty : "淘宝：" + txtTaobaoName.Text
-              , strAreaAndeCity
-            );
 
             //标题
-            string strTitle = strTitleArea;
-            textWater.Add(new TextAddModel() { Point = new Point(1212 - (strTitle.Length * 35), 1132), Text = strTitle, fontWater = new Font("黑体", 50, FontStyle.Bold), brushWater = new SolidBrush(TarColor) });
+            string strTitle = UserInfo.Name;
+            //textWater.Add(new TextAddModel() { Point = new Point(1212 - (strTitle.Length * 35), 1132), Text = strTitle, fontWater = new Font("黑体", 50, FontStyle.Bold), brushWater = new SolidBrush(TarColor) });
+            textWater.Add(new TextAddModel() { Point = new Point(1280, 850), Text = strTitle, fontWater = new Font("黑体", 60, FontStyle.Bold), brushWater = new SolidBrush(TarColor) });
+            
+            //编号
+            string strAuthNo = "授权编号：" + UserInfo.AuthNo;
+            textWater.Add(new TextAddModel() { Point = new Point(1600, 170), Text = strAuthNo, fontWater = new Font("黑体", 50, FontStyle.Bold), brushWater = new SolidBrush(TarColor) });
 
-            //日期
-            textWater.Add(new TextAddModel() { Point = new Point(1693, 2783), Text = dtAuthNow.Value.ToString("yyyy年MM月dd日"), fontWater = new Font("黑体", 50, FontStyle.Bold), brushWater = new SolidBrush(TarColor) });
+         
+            
+            //微信号
+            string strWeixinNo = "微信号："+ UserInfo.WeixinNo;
+            var fontWeixinNo= new Font("黑体", 50, FontStyle.Bold);
+            Graphics graphicsWeixinNo = CreateGraphics();
+
+            SizeF sizeWeixinNo = graphicsWeixinNo.MeasureString(strWeixinNo, fontWeixinNo);
+
+            textWater.Add(new TextAddModel() { Point = new Point((int)(1212 - sizeWeixinNo.Width / 2), 2075), Text = strWeixinNo, fontWater = fontWeixinNo, brushWater = new SolidBrush(TarColor) });
 
             //授权时效
-            string authTime = string.Format("授权有效期自{0}起{1}止", dtDateStart.Value.ToString("yyyy年MM月dd日"), dtDateEnd.Value.ToString("yyyy年MM月dd日"));
+            string authTime = string.Format("有效期：{0}起{1}止", dtDateStart.Value.ToString("yyyy年MM月dd日"), dtDateEnd.Value.ToString("yyyy年MM月dd日"));
+            var fontAuthTime = new Font("黑体", 50, FontStyle.Bold);
+            Graphics graphicsAuthTime = CreateGraphics();
+            SizeF sizeAuthTime = graphicsAuthTime.MeasureString(authTime, fontAuthTime);
 
-            textWater.Add(new TextAddModel() { Point = new Point(524, 1750), Text = authTime, fontWater = new Font("黑体", 50, FontStyle.Bold), brushWater = new SolidBrush(TarColor) });
+            textWater.Add(new TextAddModel() { Point = new Point((int)(1212 - sizeAuthTime.Width / 2), 2356), Text = authTime, fontWater = fontAuthTime, brushWater = new SolidBrush(TarColor) });
 
             //身份证号
-            string strNameNo = txtNameNo.Text;
+            string strNameNo ="身份证号："+ txtNameNo.Text;
             if (strNameNo.Length == 18)
             {
                 strNameNo = strNameNo.Substring(0, 5) + "********" + strNameNo.Substring(13, 5);
             }
-            textWater.Add(new TextAddModel() { Point = new Point(1692, 2914), Text = strNameNo, fontWater = new Font("黑体", 40), brushWater = new SolidBrush(TarColor) });
 
-          
-            //编号
-            textWater.Add(new TextAddModel() { Point = new Point(1053, 3238), Text =strAuthNo , fontWater = new Font("黑体", 40, FontStyle.Bold), brushWater = new SolidBrush(Color.Black) });
+            var fontNameNo = new Font("黑体", 50, FontStyle.Bold);
+            Graphics graphicsNameNo = CreateGraphics();
+            SizeF sizeNameNo = graphicsNameNo.MeasureString(strNameNo, fontNameNo);
+
+            textWater.Add(new TextAddModel() { Point = new Point((int)(1212 - sizeNameNo.Width / 2), 2222), Text = strNameNo, fontWater = fontNameNo, brushWater = new SolidBrush(TarColor) });
 
 
-            int duanCount = 44;
-            int hight = 1351;
-            int strCount = TrueStrLength.trueLength(contentText);
-            for (int i = 0; i <= strCount / duanCount; i++)
-            {
-                var contentStr = TrueStrLength.cutTrueLength(contentText, i * duanCount, (i + 1) * duanCount);
-                textWater.Add(new TextAddModel() { Point = new Point(513, hight), Text = contentStr, fontWater = new Font("黑体", 50, FontStyle.Bold), brushWater = new SolidBrush(TarColor) });
-                hight += 100;
-            }
 
+     
             string Template1Path = string.Format("ImgTemplate\\{0}.jpg", strLevelNo);
             string SavePath = ConSavePath + strArea + "\\" + strCity + "\\" + txtName.Text + "-" + Guid.NewGuid().ToString() + ".Jpg";
             try
@@ -405,6 +385,11 @@ namespace AgentWinform
                 UserInfo = resultUserInfo;
                 Init();
             }
+        }
+
+        private void txtName_Leave(object sender, EventArgs e)
+        {
+            txtNameSX.Text = HZ2PY.GetFirstPY(txtName.Text).ToLower();
         }
 
     }

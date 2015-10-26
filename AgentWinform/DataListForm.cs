@@ -119,6 +119,10 @@ namespace AgentWinform
             try
             {
                 UserInfoList = XmlEntityProcess<UserInfo>.GetAll();
+                if (UserInfoList==null)
+                {
+                    return;
+                }
                 var QueryData = UserInfoList.Where(m =>
                     (
                   (txtNameNo.Text == string.Empty || string.IsNullOrEmpty(m.AuthNo) || m.AuthNo.IndexOf(txtNameNo.Text) > -1)

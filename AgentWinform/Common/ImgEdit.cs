@@ -310,7 +310,7 @@ namespace AgentWinform.Common
                 }
 
                 //透明图片水印
-                if (watermarkImage.Image != null)
+                if (watermarkImage!=null&&watermarkImage.Image != null)
                 {
 
                     //获取水印图片
@@ -419,7 +419,7 @@ namespace AgentWinform.Common
                 }
 
                 //透明图片水印
-                if (watermarkImage.Image != null)
+                if (watermarkImage != null && watermarkImage.Image != null)
                 {
 
                     //获取水印图片
