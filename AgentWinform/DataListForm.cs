@@ -223,7 +223,13 @@ namespace AgentWinform
 
         private void btnExport_Click(object sender, EventArgs e)
         {
-            var data = ToExcel<UserInfo>.ToExcelFile("OutData.xlsx", UserInfoList);
+            for (int i = 0; i < UserInfoList.Count; i++)
+            {
+                UserInfoList[i].Sn = i + 1;
+            }
+
+
+            var data = ToExcel<UserInfo>.ToExcelFile("OutData.xlsx", UserInfoList);            
 
             using (SaveFileDialog saveFileDialog1 = new SaveFileDialog())
             {

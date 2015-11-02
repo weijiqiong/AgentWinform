@@ -119,10 +119,13 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="ImgTemplate\0.jpg" />
+    <Content Include="ImgTemplate\1.jpg" />
+    <Content Include="ImgTemplate\2.jpg" />
+    <Content Include="ImgTemplate\3.jpg" />
+    <Content Include="ImgTemplate\4.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ImgTemplate\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

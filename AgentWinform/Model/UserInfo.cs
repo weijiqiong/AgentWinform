@@ -44,5 +44,8 @@ namespace AgentWinform.Model
         public string photoPath { get; set; }
 
         public string AuthPhotoPath { get; set; }
+
+        public int? Sn{get;set;}
     }
+
 }
