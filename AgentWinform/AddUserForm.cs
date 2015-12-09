@@ -214,10 +214,27 @@ namespace AgentWinform
             {
                 return;
             }
-            string strArea = ((ValueAndValue)cbArea.SelectedItem).Name;
-            string strCity = ((ValueAndValue)cbCity.SelectedItem).Name;
-            string strLevel = ((ValueAndValue)cbLevel.SelectedItem).Name;
-            string strLevelNo = ((ValueAndValue)cbLevel.SelectedItem).No;
+            string strArea = string.Empty;
+            string strCity = string.Empty;
+            string strLevel = string.Empty;
+            string strLevelNo = string.Empty;
+
+            if (cbArea.SelectedItem!=null)
+            {
+                strArea = ((ValueAndValue)cbArea.SelectedItem).Name;
+            }
+            if (cbCity.SelectedItem != null)
+            {
+                strCity = ((ValueAndValue)cbCity.SelectedItem).Name;
+            }
+            if (cbLevel.SelectedItem != null)
+            {
+                strLevel = ((ValueAndValue)cbLevel.SelectedItem).Name;
+                strLevelNo = ((ValueAndValue)cbLevel.SelectedItem).No;
+            }
+        
+
+           
             ImgAddModel imgWater = null; 
             if (pbPhoto.Image != null)
             {
@@ -260,7 +277,8 @@ namespace AgentWinform
             //标题
             string strTitle = UserInfo.Name;
             //textWater.Add(new TextAddModel() { Point = new Point(1212 - (strTitle.Length * 35), 1132), Text = strTitle, fontWater = new Font("黑体", 50, FontStyle.Bold), brushWater = new SolidBrush(TarColor) });
-            textWater.Add(new TextAddModel() { Point = new Point(1280, 850), Text = strTitle, fontWater = new Font("黑体", 60, FontStyle.Bold), brushWater = new SolidBrush(TarColor) });
+            var namePoint = UserInfo.Name.Length == 2 ? new Point(1365, 830) : new Point(1320, 830);
+            textWater.Add(new TextAddModel() { Point = namePoint, Text = strTitle, fontWater = new Font("黑体", 85, FontStyle.Bold), brushWater = new SolidBrush(TarColor) });
             
             //编号
             string strAuthNo = "授权编号：" + UserInfo.AuthNo;
@@ -286,12 +304,13 @@ namespace AgentWinform
             textWater.Add(new TextAddModel() { Point = new Point((int)(1212 - sizeAuthTime.Width / 2), 2356), Text = authTime, fontWater = fontAuthTime, brushWater = new SolidBrush(TarColor) });
 
             //身份证号
-            string strNameNo ="身份证号："+ txtNameNo.Text;
-            if (strNameNo.Length == 18)
+            string strNameNo = txtNameNo.Text;
+            if ( txtNameNo.Text.Length >= 6)
             {
-                strNameNo = strNameNo.Substring(0, 5) + "********" + strNameNo.Substring(13, 5);
+                strNameNo = strNameNo.Substring(0, 6) + "******" + strNameNo.Substring(strNameNo.Length-6, 6);
             }
 
+            strNameNo = "身份证号：" + strNameNo;
             var fontNameNo = new Font("黑体", 50, FontStyle.Bold);
             Graphics graphicsNameNo = CreateGraphics();
             SizeF sizeNameNo = graphicsNameNo.MeasureString(strNameNo, fontNameNo);

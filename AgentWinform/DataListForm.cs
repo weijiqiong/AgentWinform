@@ -60,7 +60,7 @@ namespace AgentWinform
                 try
                 {
                         //自动生成编码
-                    userInfo.AuthNo = "BW" + userInfo.NameSX+userInfo.NameNo.Substring(userInfo.NameNo.Length -5,5);
+                    userInfo.AuthNo = GetNo(userInfo);
 
                 }
                 catch (Exception ex)
@@ -97,22 +97,12 @@ namespace AgentWinform
         /// <returns></returns>
         private string GetNo(UserInfo ui)
         {
-
-            //自动生成编码
-            int temp = 0;
-            var dataLiuShui = from item in  XmlEntityProcess<UserInfo>.GetAll()
-                              where item.AuthNo != null
-                              && item.AuthNo.Length >= 8
-                              && item.AuthNo.ToUpper().IndexOf(ui.Area.ToUpper()) >= 2
-                              && item.AuthNo.Substring(4,item.AuthNo.Length-4).ToLower().IndexOf(ui.City.ToLower()) >= 0
-                              && int.TryParse(item.AuthNo.Substring(item.AuthNo.Length - 3, 3), out temp)
-                              select int.Parse(item.AuthNo.Substring(item.AuthNo.Length - 3, 3));
-
-            int maxCount = dataLiuShui.Count() == 0 ? 1 : dataLiuShui.Max() + 1;
-
-            string strMax = maxCount.ToString().PadLeft(3, '0');
-
-            return "BW" + ui.Area.ToUpper() + ui.City.ToLower() + strMax;
+            if (ui.NameSX==string.Empty|| ui.NameNo==string.Empty)
+            {
+                return "姓名缩写或者编号为空，不能生成编码";
+            }
+            return "BW" + ui.NameSX + ui.NameNo.Substring(ui.NameNo.Length - 5, 5);
+          
         }
         private void BindGvUserInfo()
         {
@@ -264,9 +254,8 @@ namespace AgentWinform
                     KeyTo.Add("授权有效起始时间", "AuthStart");
                     KeyTo.Add("授权有效结束时间", "AuthEnd");
                     KeyTo.Add("代理级别", "LevelName");
-                    KeyTo.Add("省", "AreaName");
-                    KeyTo.Add("市", "CityName");
                     KeyTo.Add("授权编号（可以不填）", "AuthNo");
+                    KeyTo.Add("姓名缩写", "NameSX");
                     try
                     {
                         string StrResult = string.Empty;
