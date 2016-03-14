@@ -199,7 +199,7 @@ namespace AgentWinform
             System.Drawing.Image wrImage = pbPhoto.Image;
             Image ims = ImgEdit.ZommImg(wrImage, 303, 423);
             var imgWater = new ImgAddModel() { Point = new Point(125, 1141), Image = ims };
-
+            imgWater.Image = null;
 
             var textWater = new List<TextAddModel>();
             Color TarColor = new Color();
@@ -238,13 +238,13 @@ namespace AgentWinform
                 case "1": TarColor = Color.White;
                     contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域代理商。负责BOBIWATER美颜系列产品在{3}指定区域内招商、销售及业务推广事宜。 ";
                     break;
-                case "2": TarColor = Color.FromArgb(110, 99, 95);
+                case "2": TarColor = Color.White;
                     contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域批发商。负责BOBIWATER美颜系列产品在{3}指定区域内批发、零售业务 ";
                     break;
-                case "3": TarColor = Color.FromArgb(110, 99, 95);
+                case "3": TarColor = Color.White;
                     contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域零售商。负责BOBIWATER美颜系列产品在{3}指定区域内进行零售业务 ";
                     break;
-                case "4": TarColor = Color.FromArgb(110, 99, 95);
+                case "4": TarColor = Color.White;
                     contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域分销商。负责BOBIWATER美颜系列产品在{3}指定区域内招商、批发、零售业务 ";
                     break;
                 case "5": TarColor = Color.White;
@@ -321,6 +321,19 @@ namespace AgentWinform
             if (pbPhoto.Image == null)
             {
                 MessageBox.Show("请上传照片，点击左侧方框！");
+                return;
+            }
+
+            if (cbLevel.SelectedItem==null)
+            {
+                MessageBox.Show("请点填写代理级别！");
+                return;
+            }
+
+
+            if (cbArea.SelectedItem == null)
+            {
+                MessageBox.Show("请点填写区域！");
                 return;
             }
             SaveData();

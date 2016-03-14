@@ -14,7 +14,7 @@ namespace AgentWinform.Model
        {
            LevelData = new List<ValueAndValue>();
            LevelData.Add(new ValueAndValue(){No="0",Name="市级"});
-           LevelData.Add(new ValueAndValue(){No="1",Name="区域商"});
+           //LevelData.Add(new ValueAndValue(){No="1",Name="区域商"});
            LevelData.Add(new ValueAndValue(){No="2",Name="批发商"});
            LevelData.Add(new ValueAndValue(){No="3",Name="零售商"});
            LevelData.Add(new ValueAndValue(){No="4",Name="分销商"});

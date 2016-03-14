@@ -152,12 +152,14 @@
             // 
             this.pbPhoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbPhoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbPhoto.Image = global::AgentWinform.Properties.Resources._20150518041311718_easyicon_net_128;
             this.pbPhoto.Location = new System.Drawing.Point(24, 14);
             this.pbPhoto.Name = "pbPhoto";
             this.pbPhoto.Size = new System.Drawing.Size(145, 193);
             this.pbPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbPhoto.TabIndex = 15;
             this.pbPhoto.TabStop = false;
+            this.pbPhoto.Visible = false;
             this.pbPhoto.Click += new System.EventHandler(this.pbPhoto_Click);
             // 
             // cbArea
