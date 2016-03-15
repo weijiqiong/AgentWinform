@@ -239,13 +239,13 @@ namespace AgentWinform
                     contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域代理商。负责BOBIWATER美颜系列产品在{3}指定区域内招商、销售及业务推广事宜。 ";
                     break;
                 case "2": TarColor = Color.White;
-                    contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域批发商。负责BOBIWATER美颜系列产品在{3}指定区域内批发、零售业务 ";
+                    contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域批发商。负责BOBIWATER美颜系列产品在{3}指定区域内批发、零售业务。 ";
                     break;
                 case "3": TarColor = Color.White;
-                    contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域零售商。负责BOBIWATER美颜系列产品在{3}指定区域内进行零售业务 ";
+                    contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域零售商。负责BOBIWATER美颜系列产品在{3}指定区域内进行零售业务。 ";
                     break;
                 case "4": TarColor = Color.White;
-                    contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域分销商。负责BOBIWATER美颜系列产品在{3}指定区域内招商、批发、零售业务 ";
+                    contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}指定区域分销商。负责BOBIWATER美颜系列产品在{3}指定区域内招商、批发、零售业务。 ";
                     break;
                 case "5": TarColor = Color.White;
                     contentText = "    兹授权{0}（{1}  {2}）为BOBIWATER  {3}省独家代理商。负责BOBI WATER美颜系列产品在{3}省区域内经营、销售及业务推广事宜。 ";
@@ -259,8 +259,8 @@ namespace AgentWinform
 
             contentText = string.Format(contentText
             , txtName.Text
-            ,txtWeixinNo.Text==string.Empty?string.Empty: "微信："+txtWeixinNo.Text
-             , txtTaobaoName.Text == string.Empty ? string.Empty : "淘宝：" + txtTaobaoName.Text
+            ,txtWeixinNo.Text==string.Empty?string.Empty: "微信号："+txtWeixinNo.Text
+             , txtTaobaoName.Text == string.Empty ? string.Empty : "淘宝名：" + txtTaobaoName.Text
               , strAreaAndeCity
             );
 
@@ -289,13 +289,13 @@ namespace AgentWinform
             textWater.Add(new TextAddModel() { Point = new Point(1053, 3238), Text =strAuthNo , fontWater = new Font("黑体", 40, FontStyle.Bold), brushWater = new SolidBrush(Color.Black) });
 
 
-            int duanCount = 44;
+            int duanCount = 55;
             int hight = 1351;
             int strCount = TrueStrLength.trueLength(contentText);
             for (int i = 0; i <= strCount / duanCount; i++)
             {
                 var contentStr = TrueStrLength.cutTrueLength(contentText, i * duanCount, (i + 1) * duanCount);
-                textWater.Add(new TextAddModel() { Point = new Point(513, hight), Text = contentStr, fontWater = new Font("黑体", 50, FontStyle.Bold), brushWater = new SolidBrush(TarColor) });
+                textWater.Add(new TextAddModel() { Point = new Point(280, hight), Text = contentStr, fontWater = new Font("黑体", 50, FontStyle.Bold), brushWater = new SolidBrush(TarColor) });
                 hight += 100;
             }
 
