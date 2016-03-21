@@ -103,11 +103,11 @@ namespace AgentWinform
 
             //自动生成编码
             int temp = 0;
-            var dataLiuShui = from item in  XmlEntityProcess<UserInfo>.GetAll()
+            var dataLiuShui = from item in XmlEntityProcess<UserInfo>.GetAll()
                               where item.AuthNo != null
                               && item.AuthNo.Length >= 8
                               && item.AuthNo.ToUpper().IndexOf(ui.Area.ToUpper()) >= 2
-                              && item.AuthNo.Substring(4,item.AuthNo.Length-4).ToLower().IndexOf(ui.City.ToLower()) >= 0
+                              && item.AuthNo.Substring(4, item.AuthNo.Length - 4).ToLower().IndexOf(ui.City.ToLower()) >= 0
                               && int.TryParse(item.AuthNo.Substring(item.AuthNo.Length - 3, 3), out temp)
                               select int.Parse(item.AuthNo.Substring(item.AuthNo.Length - 3, 3));
 
@@ -256,6 +256,7 @@ namespace AgentWinform
                     KeyTo.Add("省", "AreaName");
                     KeyTo.Add("市", "CityName");
                     KeyTo.Add("授权编号（可以不填）", "AuthNo");
+                    int count = 0;
                     try
                     {
                         string StrResult = string.Empty;
@@ -282,6 +283,7 @@ namespace AgentWinform
 
                         foreach (var item in ResultData)
                         {
+                            count += 1;
                             string AreaNo = areaData.Where(m => m.Name == item.AreaName).Select(n => n.No).FirstOrDefault();
                             var cityNo = cityData.Where(m => m.Name == item.CityName).Select(n => n.No).FirstOrDefault();
                             var levelNo = Level.LevelData.Where(m => m.Name == item.LevelName).Select(n => n.No).FirstOrDefault();
@@ -306,7 +308,7 @@ namespace AgentWinform
 
                             if (!XmlEntityProcess<UserInfo>.Insert(item))
                             {
-                                MessageBox.Show("插入失败：" + XmlEntityProcess<UserInfo>.GetLastErrMsg());
+                                MessageBox.Show("第" + count + "条插入失败：" + XmlEntityProcess<UserInfo>.GetLastErrMsg());
 
                             }
                         }
@@ -316,7 +318,8 @@ namespace AgentWinform
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        MessageBox.Show("第" + count + "条插入失败，后续数据终止导入：" + ex.Message);
+                        BindGvUserInfo();
                         return;
                     }
                 }

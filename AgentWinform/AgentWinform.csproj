@@ -93,6 +93,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="Input.xlsx" />
     <None Include="OutData.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
